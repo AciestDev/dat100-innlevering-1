@@ -1,7 +1,16 @@
 import java.util.Scanner;
 
 public class OppgaveO2C {
+    private static final boolean ORIGINAL_QUESTION2C = true;
+
     public static void main(String[] args) {
+        if (ORIGINAL_QUESTION2C) {
+            mainOriginal(args);
+        } else {
+            mainImproved(args);
+        }
+    }
+    public static void mainOriginal(String[] args) {
         int poengsum = 0;
         char karakterer [] = {'A', 'B', 'C', 'D', 'E', 'F'};
 
@@ -27,5 +36,10 @@ public class OppgaveO2C {
                 i = i - 1;
             }
         }
+        in.close();
+    }
+
+    public static void mainImproved(String[] args) {
+        //Improved code
     }
 }

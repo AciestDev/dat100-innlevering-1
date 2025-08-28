@@ -1,6 +1,16 @@
 import java.util.Scanner;
 public class OppgaveO2 {
-    public static void main(String [] args){
+    private static final boolean ORIGINAL_QUESTION2 = true;
+
+    public static void main(String [] args) {
+        if (ORIGINAL_QUESTION2) {
+            mainOriginal(args);
+        } else {
+            mainImproved(args);
+        }
+    }
+
+    public static void mainOriginal(String [] args) {
 
         int poengsum = 0;
         char karakterer [] = {'A', 'B', 'C', 'D', 'E', 'F'};
@@ -24,7 +34,10 @@ public class OppgaveO2 {
         } else {
             System.out.println("Det er ikke gyldig tall");
         }
+        in.close();
+    }
 
-
+    public static void mainImproved(String [] args) {
+        //improved code
     }
 }

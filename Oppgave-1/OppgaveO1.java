@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class OppgaveO1 {
     private static final boolean ORIGINAL_ASSIGNMENT = true;
     public static void main(String[] args) {
-        if (ORIGINAL_ASSIGNMENT) {
+        if (ORIGINAL_QUESTION1) {
             mainOriginal(args);
         } else {
             mainImproved(args);
@@ -74,8 +74,9 @@ public class OppgaveO1 {
                 break;
             case 6:
                 System.out.println("Du betaler " + prosent[4] + "% trinnskatt som utgjør: " + Skatt + "kr");
-                break;
+                break;   
         }
+        in.close();
     }
 // Dette er en forbedret kode    
     public static void mainImproved(String[] args) {
@@ -88,7 +89,6 @@ public class OppgaveO1 {
         Scanner in = new Scanner(System.in);
         System.out.print("What is the gross income: ");
         double grossIncome = in.nextDouble();
-
         in.close();
     }
 }
