@@ -1,7 +1,6 @@
 // Informasjon funnet: www.skatteetaten.no/satser/trinnskatt/?year=2025#rateShowYear
 import java.util.Scanner;
 public class OppgaveO1 {
-    private static final boolean ORIGINAL_ASSIGNMENT = true;
     public static void main(String[] args) {
         if (ORIGINAL_QUESTION1) {
             mainOriginal(args);
