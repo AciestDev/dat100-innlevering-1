@@ -1,7 +1,15 @@
 // Informasjon funnet: www.skatteetaten.no/satser/trinnskatt/?year=2025#rateShowYear
 import java.util.Scanner;
 public class OppgaveO1 {
+    private static final boolean ORIGINAL_ASSIGNMENT = true;
     public static void main(String[] args) {
+        if (ORIGINAL_ASSIGNMENT) {
+            mainOriginal(args);
+        } else {
+            mainImproved(args);
+        }
+    }
+    public static void mainOriginal(String[] args) {
 // Every variable required for this code
         int switchChooser = 0;
         double [] prosent = {1.7, 4.0, 13.7, 16.7, 17.7};
@@ -69,4 +77,19 @@ public class OppgaveO1 {
                 break;
         }
     }
+// Dette er en forbedret kode    
+    public static void mainImproved(String[] args) {
+// Every variable required for this code
+        double[] percent = {1.7, 4.0, 13.7, 16.7, 17.7};
+        double[] bracketThresholds = {217401, 306051, 697151, 942401, 1410751};
+        double[] Tax = new double[bracketThresholds.length];
+
+// Input code
+        Scanner in = new Scanner(System.in);
+        System.out.print("What is the gross income: ");
+        double grossIncome = in.nextDouble();
+
+        in.close();
+    }
 }
+
