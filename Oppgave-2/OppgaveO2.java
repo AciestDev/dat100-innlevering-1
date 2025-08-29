@@ -39,5 +39,26 @@ public class OppgaveO2 {
 
     public static void mainImproved(String [] args) {
         //improved code
+        char grade [] = {'A', 'B', 'C', 'D', 'E', 'F'};
+        int gradeThreshold [] = {100, 90, 80, 60, 50, 40, 0};
+
+        Scanner in = new Scanner(System.in);
+        System.out.print("Hva er poengsummen til studenten? ");
+        int pointSum = in.nextInt();
+
+        for (int i = 0; i <= 6; i++) {
+            if ((pointSum < gradeThreshold[i]) && pointSum >= gradeThreshold[i+1]) {
+                System.out.print("The grade you have recieved is: " + grade[i]);
+            } else if (pointSum == 100) {
+                System.out.print("The grade you have recieved is: " + grade[i]);
+                i = 7;
+            } else if (pointSum > 100 || pointSum < 0) {
+                System.out.print("test1");
+                i = 7;
+            }
+        }
+        if (pointSum > 100 || pointSum < 0) {
+            System.out.print("test2");
+        }
     }
 }
