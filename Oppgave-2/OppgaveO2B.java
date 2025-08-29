@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class OppgaveO2B {
 
 //Boolean verdi som velger koden fra gjennomgått stoff + simplifisert eller improvisert kode på bunn     
-    private static final boolean ORIGINAL_QUESTION2B = false;
+    private static final boolean ORIGINAL_QUESTION2B = true;
     public static void main(String[] args) {
         if (ORIGINAL_QUESTION2B) {
             mainOriginal(args);
