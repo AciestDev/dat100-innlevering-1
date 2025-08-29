@@ -1,7 +1,8 @@
 // Informasjon funnet: www.skatteetaten.no/satser/trinnskatt/?year=2025#rateShowYear
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Arrays;
 public class OppgaveO1 {
-    private static final boolean ORIGINAL_QUESTION1 = true;
     public static void main(String[] args) {
         if (ORIGINAL_QUESTION1) {
             mainOriginal(args);
@@ -82,14 +83,29 @@ public class OppgaveO1 {
     public static void mainImproved(String[] args) {
 // Every variable required for this code
         double[] percent = {1.7, 4.0, 13.7, 16.7, 17.7};
-        double[] bracketThresholds = {217401, 306051, 697151, 942401, 1410751};
-        double[] Tax = new double[bracketThresholds.length];
+        ArrayList<Double> bracketThresholdsL = new ArrayList<Double>();
+        Double[] bracketThresholds = new Double[] {217401.0, 306051.0, 697151.0, 942401.0, 1410751.0};
+        bracketThresholdsL.addAll(Arrays.asList(bracketThresholds));
+        double tax = 0.0;
 
 // Input code
         Scanner in = new Scanner(System.in);
         System.out.print("What is the gross income: ");
         double grossIncome = in.nextDouble();
+
+        for (int i = 0; i < bracketThresholdsL.size(); i++) {
+            if (grossIncome < bracketThresholdsL.get(0)) {
+                System.out.println("You don't have to pay tax! ");
+                i = bracketThresholdsL.size();
+            } else if(grossIncome > bracketThresholdsL.get(4)) {
+                tax = (percent[4] / 100) * grossIncome;
+                System.out.println("Your tax is2: " + tax);
+                i = bracketThresholdsL.size();
+            } else if (grossIncome >= bracketThresholdsL.get(i) && grossIncome < bracketThresholdsL.get(i+1) && grossIncome > bracketThresholdsL.get(0) && grossIncome < bracketThresholdsL.get(4)) {
+                tax = (percent[i] / 100) * grossIncome;
+                System.out.println("Your tax isT: " + tax);
+            }
+        }    
         in.close();
     }
 }
-
