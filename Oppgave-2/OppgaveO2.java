@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class OppgaveO2 {
 
 //Boolean verdi som velger koden fra gjennomgått stoff + simplifisert eller improvisert kode på bunn 
-    private static final boolean ORIGINAL_QUESTION2 = true;
+    private static final boolean ORIGINAL_QUESTION2 = false;
     public static void main(String [] args) {
         if (ORIGINAL_QUESTION2) {
             mainOriginal(args);
@@ -63,6 +63,9 @@ public class OppgaveO2 {
                 System.out.print("The grade you have recieved is: " + grade[i]);
             } else if (pointSum == 100) {
                 System.out.print("The grade you have recieved is: " + grade[i]);
+                i = 7;
+            } else if (pointSum > 100) {
+                System.out.print("That is not a valid number. ");
                 i = 7;
             }
         }
