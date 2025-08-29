@@ -1,7 +1,9 @@
+//Oppgave 2A
 import java.util.Scanner;
 public class OppgaveO2 {
-    private static final boolean ORIGINAL_QUESTION2 = true;
 
+//Boolean verdi som velger koden fra gjennomgått stoff + simplifisert eller improvisert kode på bunn 
+    private static final boolean ORIGINAL_QUESTION2 = true;
     public static void main(String [] args) {
         if (ORIGINAL_QUESTION2) {
             mainOriginal(args);
@@ -10,15 +12,18 @@ public class OppgaveO2 {
         }
     }
 
+// "Simplifisert" kode med else if statments istedenfor
     public static void mainOriginal(String [] args) {
-
         int poengsum = 0;
+// Istedenfor å skrive 6 variabler A, B, C, osv legger jeg de inn i en array 
         char karakterer [] = {'A', 'B', 'C', 'D', 'E', 'F'};
 
+// Input koden
         Scanner in = new Scanner(System.in);
         System.out.print("Hva er poengsummen til studenten? ");
         poengsum = in.nextInt();
 
+// Bestemmer hvilken karakter passer for hvilken poengsum       
         if ((poengsum <= 100) && (poengsum >= 90)) {
             System.out.println("Karakteren studenten får er: " + karakterer[0]);
         } else if ((poengsum <= 89) && (poengsum >= 80)) {
@@ -37,7 +42,36 @@ public class OppgaveO2 {
         in.close();
     }
 
+// Improved code, this will be in english as is standard practice for future jobs    
     public static void mainImproved(String [] args) {
-        //improved code
+
+// All variables that are required for this code to function
+        char grade [] = {'A', 'B', 'C', 'D', 'E', 'F'};
+        int gradeThreshold [] = {100, 90, 80, 60, 50, 40, 0};
+
+// To make sure the user does not type in anything but an integer we use try-catch to tell them what is allowed
+        try {
+// Input code
+        Scanner in = new Scanner(System.in);
+        System.out.print("Hva er poengsummen til studenten? ");
+        int pointSum = in.nextInt();        
+
+// As there is 6 possible grades. 
+// This for loop checks 6 times to see if pointSum matches with "i" gradeThreshold 
+        for (int i = 0; i <= 6; i++) {
+            if ((pointSum < gradeThreshold[i]) && pointSum >= gradeThreshold[i+1]) {
+                System.out.print("The grade you have recieved is: " + grade[i]);
+            } else if (pointSum == 100) {
+                System.out.print("The grade you have recieved is: " + grade[i]);
+                i = 7;
+            }
+        }
+        in.close();
+
+// In the case the user does not type a valid 0-100 this code will play        
+        } catch (Exception e) {
+            System.out.print("That is not a valid number. ");
+            System.out.print("Try using only positive whole numbers from and with 0 to and with 100");
+        }
     }
 }
