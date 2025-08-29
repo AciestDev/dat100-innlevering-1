@@ -38,7 +38,6 @@ public class OppgaveO2B {
                 System.out.println("Karakteren studenten får er: " + karakterer[5]);
             } else {
                 System.out.println("Det er ikke gyldig tall");
-                i--;
             }
         }
         in.close();
@@ -70,16 +69,13 @@ public class OppgaveO2B {
                 } else if (pointSum > 100) {
                     System.out.print("That is not a valid number. ");
                     i = 7;
-                    k--;
                 }
             }
-            in.close();
 
 // In the case the user does not type a valid 0-100 this code will play        
             }   catch (Exception e) {
                 System.out.print("That is not a valid number. ");
                 System.out.print("Try using only positive whole numbers from and with 0 to and with 100");
-                k--;
             }
         }
     }
