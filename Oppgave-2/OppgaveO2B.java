@@ -73,6 +73,7 @@ public class OppgaveO2B {
                     k--;
                 }
             }
+            in.close();
 
 // In the case the user does not type a valid 0-100 this code will play        
             }   catch (Exception e) {
