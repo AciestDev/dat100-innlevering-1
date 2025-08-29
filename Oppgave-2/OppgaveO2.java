@@ -3,11 +3,7 @@ import java.util.Scanner;
 public class OppgaveO2 {
 
 //Boolean verdi som velger koden fra gjennomgått stoff + simplifisert eller improvisert kode på bunn 
-<<<<<<< HEAD
     private static final boolean ORIGINAL_QUESTION2 = true;
-=======
-    private static final boolean ORIGINAL_QUESTION2 = false;
->>>>>>> acf0ee5281343500a894497a25bec994a30d3bc5
     public static void main(String [] args) {
         if (ORIGINAL_QUESTION2) {
             mainOriginal(args);
@@ -68,7 +64,6 @@ public class OppgaveO2 {
             } else if (pointSum == 100) {
                 System.out.print("The grade you have recieved is: " + grade[i]);
                 i = 7;
-<<<<<<< HEAD
             }
         }
         in.close();
@@ -77,17 +72,7 @@ public class OppgaveO2 {
         } catch (Exception e) {
             System.out.print("That is not a valid number. ");
             System.out.print("Try using only positive whole numbers from and with 0 to and with 100");
-=======
-            } else if (pointSum > 100 || pointSum < 0) {
-                System.out.print("That is not a valid answer");
-                i = 7;
-            }
-        }
-        in.close();
-        } catch (Exception e) {
-            System.out.print("That is not a valid number. ");
-            System.out.print("Try using only positive whole numbers from 0 to and with 100");
->>>>>>> acf0ee5281343500a894497a25bec994a30d3bc5
+           
         }
     }
 }
