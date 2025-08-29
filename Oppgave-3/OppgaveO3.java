@@ -14,7 +14,7 @@ public class OppgaveO3 {
             n--;
             nFak = nFak * n;
         }
-        System.out.println("n! Er lik:" + nFak);
+        System.out.println("n! Er lik: " + nFak);
 
         in.close();
     }
