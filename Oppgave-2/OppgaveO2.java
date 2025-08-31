@@ -53,7 +53,7 @@ public class OppgaveO2 {
         try {
 // Input code
         Scanner in = new Scanner(System.in);
-        System.out.print("Hva er poengsummen til studenten? ");
+        System.out.print("What is the point sum of the student? ");
         int pointSum = in.nextInt();        
 
 // As there is 6 possible grades. 
