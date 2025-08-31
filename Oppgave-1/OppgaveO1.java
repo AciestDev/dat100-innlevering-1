@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class OppgaveO1 {
 
 //Boolean verdi som velger koden fra gjennomgått stoff + simplifisert eller improvisert kode på bunn    
-    private static final boolean ORIGINAL_QUESTION1 = false;
+    private static final boolean ORIGINAL_QUESTION1 = true;
     public static void main(String[] args) {
         if (ORIGINAL_QUESTION1) {
             mainOriginal(args);
