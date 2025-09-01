@@ -51,11 +51,10 @@ public class OppgaveO2B {
             char grade [] = {'A', 'B', 'C', 'D', 'E', 'F'};
             int gradeThreshold [] = {100, 90, 80, 60, 50, 40, 0};
 
-// To make sure the user does not type in anything but an integer we use try-catch to tell them what is allowed
-            try {
+
 // Input code
             Scanner in = new Scanner(System.in);
-            System.out.print("Hva er poengsummen til studenten? ");
+            System.out.print("What is the point sum of the student? ");
             int pointSum = in.nextInt();        
 
 // As there is 6 possible grades. 
@@ -63,6 +62,7 @@ public class OppgaveO2B {
             for (int i = 0; i <= 6; i++) {
                 if ((pointSum < gradeThreshold[i]) && pointSum >= gradeThreshold[i+1]) {
                     System.out.println("The grade you have recieved is: " + grade[i]);
+                    i = 7;
                 } else if (pointSum == 100) {
                     System.out.println("The grade you have recieved is: " + grade[i]);
                     i = 7;
@@ -70,12 +70,6 @@ public class OppgaveO2B {
                     System.out.print("That is not a valid number. ");
                     i = 7;
                 }
-            }
-
-// In the case the user does not type a valid 0-100 this code will play        
-            }   catch (Exception e) {
-                System.out.print("That is not a valid number. ");
-                System.out.print("Try using only positive whole numbers from and with 0 to and with 100");
             }
         }
     }
