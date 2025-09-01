@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class OppgaveO1 {
 
 //Boolean verdi som velger koden fra gjennomgått stoff + simplifisert eller improvisert kode på bunn    
-    private static final boolean ORIGINAL_QUESTION1 = false;
+    private static final boolean ORIGINAL_QUESTION1 = true;
     public static void main(String[] args) {
         if (ORIGINAL_QUESTION1) {
             mainOriginal(args);
@@ -106,7 +106,7 @@ public class OppgaveO1 {
             if (grossIncome < bracketThresholdsL.get(0)) {
                 System.out.println("You don't have to pay tax! ");
                 i = bracketThresholdsL.size();
-            } else if(grossIncome > bracketThresholdsL.get(4)) {
+            } else if(grossIncome >= bracketThresholdsL.get(4)) {
                 tax = (percent[4] / 100) * grossIncome;
                 tax = Math.round(tax);
                 System.out.println("Your tax is: " + tax);

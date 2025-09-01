@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class OppgaveO2 {
 
 //Boolean verdi som velger koden fra gjennomgått stoff + simplifisert eller improvisert kode på bunn 
-    private static final boolean ORIGINAL_QUESTION2 = false;
+    private static final boolean ORIGINAL_QUESTION2 = true;
     public static void main(String [] args) {
         if (ORIGINAL_QUESTION2) {
             mainOriginal(args);
@@ -53,7 +53,7 @@ public class OppgaveO2 {
         try {
 // Input code
         Scanner in = new Scanner(System.in);
-        System.out.print("Hva er poengsummen til studenten? ");
+        System.out.print("What is the point sum of the student? ");
         int pointSum = in.nextInt();        
 
 // As there is 6 possible grades. 
