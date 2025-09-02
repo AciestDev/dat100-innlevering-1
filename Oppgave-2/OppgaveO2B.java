@@ -46,6 +46,8 @@ public class OppgaveO2B {
 // Improved code, this will be in english as is standard practice for future jobs    
     public static void mainImproved(String [] args) {
 
+        Scanner in = new Scanner(System.in);
+
         for(int k = 0; k < 10; k++) {
 // All variables that are required for this code to function
             char grade [] = {'A', 'B', 'C', 'D', 'E', 'F'};
@@ -53,7 +55,6 @@ public class OppgaveO2B {
 
 
 // Input code
-            Scanner in = new Scanner(System.in);
             System.out.print("What is the point sum of the student? ");
             int pointSum = in.nextInt();        
 
@@ -72,5 +73,6 @@ public class OppgaveO2B {
                 }
             }
         }
+        in.close();
     }
 }

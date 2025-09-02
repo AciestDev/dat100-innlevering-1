@@ -62,7 +62,7 @@ public class OppgaveO2 {
             if ((pointSum < gradeThreshold[i]) && pointSum >= gradeThreshold[i+1]) {
                 System.out.print("The grade you have recieved is: " + grade[i]);
             } else if (pointSum == 100) {
-                System.out.print("The grade you have recieved is: " + grade[i]);
+                System.out.print("The grade you have recieved is: " + grade[0]);
                 i = 7;
             } else if (pointSum > 100) {
                 System.out.print("That is not a valid number. ");

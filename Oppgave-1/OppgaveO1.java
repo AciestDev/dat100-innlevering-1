@@ -107,11 +107,13 @@ public class OppgaveO1 {
                 System.out.println("You don't have to pay tax! ");
                 i = bracketThresholdsL.size();
             } else if(grossIncome >= bracketThresholdsL.get(4)) {
+                grossIncome = grossIncome - bracketThresholdsL.get(4);
                 tax = (percent[4] / 100) * grossIncome;
                 tax = Math.round(tax);
                 System.out.println("Your tax is: " + tax);
                 i = bracketThresholdsL.size();
             } else if (grossIncome >= bracketThresholdsL.get(i) && grossIncome < bracketThresholdsL.get(i+1) && grossIncome > bracketThresholdsL.get(0) && grossIncome < bracketThresholdsL.get(4)) {
+                grossIncome = grossIncome - bracketThresholdsL.get(i);
                 tax = (percent[i] / 100) * grossIncome;
                 tax = Math.round(tax);
                 System.out.println("Your tax is: " + tax);
