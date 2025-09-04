@@ -61,11 +61,11 @@ public class OppgaveO2C {
 // As there is 6 possible grades. 
 // This for loop checks 6 times to see if pointSum matches with "i" gradeThreshold 
             for (int i = 0; i <= 6; i++) {
-            if (pointSum >= gradeThreshold[i]) {
-                System.out.print("The grade you have recieved is: " + grade[i]);
-                i = 7;
-                students ++;
-            }
+                if (pointSum >= gradeThreshold[i]) {
+                    System.out.print("The grade you have recieved is: " + grade[i]);
+                    i = 7;
+                    students ++;
+                }
             }
         }
 

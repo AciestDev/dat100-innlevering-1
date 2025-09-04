@@ -24,20 +24,20 @@ public class OppgaveO2B {
             System.out.print("Hva er poengsummen til studenten? ");
             poengsum = in.nextInt();
 
-            if ((poengsum <= 100) && (poengsum >= 90)) {
-                System.out.println("Karakteren studenten får er: " + karakterer[0]);
-            } else if ((poengsum <= 89) && (poengsum >= 80)) {
-                System.out.println("Karakteren studenten får er: " + karakterer[1]);
-            } else if ((poengsum <= 79) && (poengsum >= 60)) {
-                System.out.println("Karakteren studenten får er: " + karakterer[2]);
-            } else if ((poengsum <= 59) && (poengsum >= 50)) {
-                System.out.println("Karakteren studenten får er: " + karakterer[3]);
-            } else if ((poengsum <= 49) && (poengsum >= 40)) {
-                System.out.println("Karakteren studenten får er: " + karakterer[4]);
-            } else if ((poengsum <= 39) && (poengsum >= 0)) {
-                System.out.println("Karakteren studenten får er: " + karakterer[5]);
-            } else {
+            if (poengsum > 100) {
                 System.out.println("Det er ikke gyldig tall");
+            } else if (poengsum >= 90) {
+                System.out.println("Karakteren studenten får er: " + karakterer[0]);
+            } else if (poengsum >= 80) {
+                System.out.println("Karakteren studenten får er: " + karakterer[1]);
+            } else if (poengsum >= 60) {
+                System.out.println("Karakteren studenten får er: " + karakterer[2]);
+            } else if (poengsum >= 50) {
+                System.out.println("Karakteren studenten får er: " + karakterer[3]);
+            } else if (poengsum >= 40) {
+                System.out.println("Karakteren studenten får er: " + karakterer[4]);
+            } else if (poengsum >= 0) {
+                System.out.println("Karakteren studenten får er: " + karakterer[5]);
             }
         }
         in.close();
@@ -62,11 +62,11 @@ public class OppgaveO2B {
 // As there is 6 possible grades. 
 // This for loop checks 6 times to see if pointSum matches with "i" gradeThreshold 
             for (int i = 0; i <= 6; i++) {
-            if (pointSum >= gradeThreshold[i]) {
-                System.out.print("The grade you have recieved is: " + grade[i]);
-                i = 7;
-                students ++;
-            }
+                if (pointSum >= gradeThreshold[i]) {
+                    System.out.print("The grade you have recieved is: " + grade[i]);
+                    i = 7;
+                    students ++;
+                }
             }
         }
         in.close();
