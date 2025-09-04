@@ -1,12 +1,11 @@
 // Informasjon funnet: www.skatteetaten.no/satser/trinnskatt/?year=2025#rateShowYear
 import java.util.Scanner;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 public class OppgaveO1Ny {
 
 //Boolean verdi som velger koden fra gjennomgått stoff + simplifisert eller improvisert kode på bunn    
-    private static final boolean ORIGINAL_QUESTION1 = false;
+    private static final boolean ORIGINAL_QUESTION1 = true;
     public static void main(String[] args) {
         if (ORIGINAL_QUESTION1) {
             mainOriginal(args);
@@ -95,7 +94,8 @@ public class OppgaveO1Ny {
                 grossIncome = grossIncome - bracketThresholdsL.get(5);
                 tax = tax + (grossIncome * (percent.get(5) / 100));
                 tax = tax + taxConstantList.get(6);
-                System.out.println("Your tax is: " + tax);
+                tax = Math.round(tax);
+                System.out.println("Your tax is: " + tax + "kr");
                 i = 7;
 
             } else if(grossIncome <= 0) {
@@ -106,6 +106,7 @@ public class OppgaveO1Ny {
                 grossIncome = grossIncome - bracketThresholdsL.get(i-1);
                 tax = tax + (grossIncome * (percent.get(i-1) / 100));
                 tax = tax + taxConstantList.get(i);
+                tax = Math.round(tax);
                 System.out.println("Your tax is: " + tax);
                 i = 7;
             }
