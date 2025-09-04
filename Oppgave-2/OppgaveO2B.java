@@ -24,20 +24,20 @@ public class OppgaveO2B {
             System.out.print("Hva er poengsummen til studenten? ");
             poengsum = in.nextInt();
 
-            if ((poengsum <= 100) && (poengsum >= 90)) {
-                System.out.println("Karakteren studenten får er: " + karakterer[0]);
-            } else if ((poengsum <= 89) && (poengsum >= 80)) {
-                System.out.println("Karakteren studenten får er: " + karakterer[1]);
-            } else if ((poengsum <= 79) && (poengsum >= 60)) {
-                System.out.println("Karakteren studenten får er: " + karakterer[2]);
-            } else if ((poengsum <= 59) && (poengsum >= 50)) {
-                System.out.println("Karakteren studenten får er: " + karakterer[3]);
-            } else if ((poengsum <= 49) && (poengsum >= 40)) {
-                System.out.println("Karakteren studenten får er: " + karakterer[4]);
-            } else if ((poengsum <= 39) && (poengsum >= 0)) {
-                System.out.println("Karakteren studenten får er: " + karakterer[5]);
-            } else {
+            if (poengsum > 100) {
                 System.out.println("Det er ikke gyldig tall");
+            } else if (poengsum >= 90) {
+                System.out.println("Karakteren studenten får er: " + karakterer[0]);
+            } else if (poengsum >= 80) {
+                System.out.println("Karakteren studenten får er: " + karakterer[1]);
+            } else if (poengsum >= 60) {
+                System.out.println("Karakteren studenten får er: " + karakterer[2]);
+            } else if (poengsum >= 50) {
+                System.out.println("Karakteren studenten får er: " + karakterer[3]);
+            } else if (poengsum >= 40) {
+                System.out.println("Karakteren studenten får er: " + karakterer[4]);
+            } else if (poengsum >= 0) {
+                System.out.println("Karakteren studenten får er: " + karakterer[5]);
             }
         }
         in.close();
@@ -46,9 +46,10 @@ public class OppgaveO2B {
 // Improved code, this will be in english as is standard practice for future jobs    
     public static void mainImproved(String [] args) {
 
+        int students = 0;
         Scanner in = new Scanner(System.in);
 
-        for(int k = 0; k < 10; k++) {
+        while (students > 10) {
 // All variables that are required for this code to function
             char grade [] = {'A', 'B', 'C', 'D', 'E', 'F'};
             int gradeThreshold [] = {100, 90, 80, 60, 50, 40, 0};
@@ -61,15 +62,10 @@ public class OppgaveO2B {
 // As there is 6 possible grades. 
 // This for loop checks 6 times to see if pointSum matches with "i" gradeThreshold 
             for (int i = 0; i <= 6; i++) {
-                if ((pointSum < gradeThreshold[i]) && pointSum >= gradeThreshold[i+1]) {
-                    System.out.println("The grade you have recieved is: " + grade[i]);
+                if (pointSum >= gradeThreshold[i]) {
+                    System.out.print("The grade you have recieved is: " + grade[i]);
                     i = 7;
-                } else if (pointSum == 100) {
-                    System.out.println("The grade you have recieved is: " + grade[i]);
-                    i = 7;
-                } else if (pointSum > 100) {
-                    System.out.print("That is not a valid number. ");
-                    i = 7;
+                    students ++;
                 }
             }
         }

@@ -24,21 +24,21 @@ public class OppgaveO2 {
         poengsum = in.nextInt();
 
 // Bestemmer hvilken karakter passer for hvilken poengsum       
-        if ((poengsum <= 100) && (poengsum >= 90)) {
-            System.out.println("Karakteren studenten får er: " + karakterer[0]);
-        } else if ((poengsum <= 89) && (poengsum >= 80)) {
-            System.out.println("Karakteren studenten får er: " + karakterer[1]);
-        } else if ((poengsum <= 79) && (poengsum >= 60)) {
-            System.out.println("Karakteren studenten får er: " + karakterer[2]);
-        } else if ((poengsum <= 59) && (poengsum >= 50)) {
-            System.out.println("Karakteren studenten får er: " + karakterer[3]);
-        } else if ((poengsum <= 49) && (poengsum >= 40)) {
-            System.out.println("Karakteren studenten får er: " + karakterer[4]);
-        } else if ((poengsum <= 39) && (poengsum >= 0)) {
-            System.out.println("Karakteren studenten får er: " + karakterer[5]);
-        } else {
-            System.out.println("Det er ikke gyldig tall");
-        }
+        if (poengsum > 100) {
+                System.out.println("Det er ikke gyldig tall");
+            } else if (poengsum >= 90) {
+                System.out.println("Karakteren studenten får er: " + karakterer[0]);
+            } else if (poengsum >= 80) {
+                System.out.println("Karakteren studenten får er: " + karakterer[1]);
+            } else if (poengsum >= 60) {
+                System.out.println("Karakteren studenten får er: " + karakterer[2]);
+            } else if (poengsum >= 50) {
+                System.out.println("Karakteren studenten får er: " + karakterer[3]);
+            } else if (poengsum >= 40) {
+                System.out.println("Karakteren studenten får er: " + karakterer[4]);
+            } else if (poengsum >= 0) {
+                System.out.println("Karakteren studenten får er: " + karakterer[5]);
+            }
         in.close();
     }
 
@@ -46,8 +46,8 @@ public class OppgaveO2 {
     public static void mainImproved(String [] args) {
 
 // All variables that are required for this code to function
-        char grade [] = {'A', 'B', 'C', 'D', 'E', 'F'};
-        int gradeThreshold [] = {100, 90, 80, 60, 50, 40, 0};
+        String grade [] = {"Not valid", "A", "B", "C", "D", "E", "F"};
+        int gradeThreshold [] = {101, 90, 80, 60, 50, 40, 0};
 
 // To make sure the user does not type in anything but an integer we use try-catch to tell them what is allowed
         try {
@@ -56,16 +56,11 @@ public class OppgaveO2 {
         System.out.print("What is the point sum of the student? ");
         int pointSum = in.nextInt();        
 
-// As there is 6 possible grades. 
-// This for loop checks 6 times to see if pointSum matches with "i" gradeThreshold 
+// As there is 7 possibilites in the list "grade". 
+// This for loop checks 7 times to see if pointSum matches with "i" gradeThreshold 
         for (int i = 0; i <= 6; i++) {
-            if ((pointSum < gradeThreshold[i]) && pointSum >= gradeThreshold[i+1]) {
+            if (pointSum >= gradeThreshold[i]) {
                 System.out.print("The grade you have recieved is: " + grade[i]);
-            } else if (pointSum == 100) {
-                System.out.print("The grade you have recieved is: " + grade[0]);
-                i = 7;
-            } else if (pointSum > 100) {
-                System.out.print("That is not a valid number. ");
                 i = 7;
             }
         }
@@ -75,7 +70,6 @@ public class OppgaveO2 {
         } catch (Exception e) {
             System.out.print("That is not a valid number. ");
             System.out.print("Try using only positive whole numbers from and with 0 to and with 100");
-           
         }
     }
 }

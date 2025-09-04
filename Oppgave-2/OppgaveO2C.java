@@ -48,8 +48,8 @@ public class OppgaveO2C {
     public static void mainImproved(String [] args) {
 
         Scanner in = new Scanner(System.in);
-
-        for(int k = 0; k < 10; k++) {
+        int students = 10;
+        while (students > 10) {
 // All variables that are required for this code to function
             char grade [] = {'A', 'B', 'C', 'D', 'E', 'F'};
             int gradeThreshold [] = {100, 90, 80, 60, 50, 40, 0};
@@ -61,16 +61,10 @@ public class OppgaveO2C {
 // As there is 6 possible grades. 
 // This for loop checks 6 times to see if pointSum matches with "i" gradeThreshold 
             for (int i = 0; i <= 6; i++) {
-                if ((pointSum < gradeThreshold[i]) && pointSum >= gradeThreshold[i+1]) {
-                    System.out.println("The grade you have recieved is: " + grade[i]);
-                    i = 7;  
-                } else if (pointSum == 100) {
-                    System.out.println("The grade you have recieved is: " + grade[i]);
+                if (pointSum >= gradeThreshold[i]) {
+                    System.out.print("The grade you have recieved is: " + grade[i]);
                     i = 7;
-                } else if (pointSum > 100) {
-                    System.out.print("That is not a valid number. ");
-                    i = 7;
-                    k--;
+                    students ++;
                 }
             }
         }
