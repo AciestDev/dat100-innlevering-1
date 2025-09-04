@@ -81,7 +81,7 @@ public class OppgaveO1 {
         List<Double> percent = Arrays.asList(0.0, 1.7, 4.0, 13.7, 16.7, 17.7);
         List<Double> bracketThresholdsL = Arrays.asList(0.0, 217401.0, 306051.0, 697151.0, 942401.0, 1410751.0);
         double tax = 0.0;
-//temp
+
 // Input code
         Scanner in = new Scanner(System.in);
         System.out.print("What is the gross income: ");
